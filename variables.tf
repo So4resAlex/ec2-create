@@ -5,7 +5,12 @@ variable "availability_zone" {
 
 variable "instance_type" {
     description = "Type of instance that will be launched"
-    type = string  
+    type = string
+
+    validation {
+      condition = contains (["t3.nano", "t3.small", "t2.nano", "t2.small"], var.instance_type)
+      error_message = "Invalid instance type. Allowed types are: t3.nano, t3.small, t2.nano, t2.small."
+    }
 }
 
 variable "key_name" {
