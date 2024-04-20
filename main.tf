@@ -20,7 +20,7 @@ resource "aws_instance" "ec2_server" {
   vpc_security_group_ids = var.vpc_security_group_ids
   root_block_device {
     delete_on_termination = true
-    volume_size = var.volume_size
+    volume_size = min(var.volume_size, 25)
     volume_type = "gp3"
   }
   tags = {
