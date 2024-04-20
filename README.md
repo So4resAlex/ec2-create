@@ -65,10 +65,10 @@ module "ec2_create" {
    environment = "DevOps"
  }
 
+````
 3. Initialize the Terraform project using the command below.
 ``terraform init -backend-config="env/backend_s3_devops.hcl"``
 4. Generate the execution plan using the command below.
 ``terraform plan -out plano``
 5. Apply the execution plan with the command below.
 ``terraform apply plan``
-````
