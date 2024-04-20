@@ -32,6 +32,10 @@ variable "vpc_security_group_ids" {
 variable "volume_size" {
   description = "Initial size of the EBS"
   type        = number
+  validation {
+    condition = var.volume_size <= 25
+    error_message = "The volume size must be 25 GB or less"
+  }
 }
 
 variable "instance_name" {
