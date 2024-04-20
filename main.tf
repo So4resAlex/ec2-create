@@ -23,7 +23,7 @@ resource "aws_instance" "ec2_server" {
     volume_size = var.volume_size
     volume_type = "gp3"
   }
-  tags = {q
+  tags = {
     Name = var.instance_name
     Manager = "Terraform"
     Environment = var.environment
