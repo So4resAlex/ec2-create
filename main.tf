@@ -12,7 +12,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ec2_server" {
-  ami                    = data.aws_ami.ubuntu.id
+  ami                    = var.ami
   availability_zone      = var.availability_zone
   instance_type          = var.instance_type
   key_name               = var.key_name

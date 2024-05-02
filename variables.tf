@@ -47,3 +47,8 @@ variable "environment" {
   description = "Environment"
   type        = string
 }
+
+variable "ami" {
+  description = "AMI"
+  type = string
+}
